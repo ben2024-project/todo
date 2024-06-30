@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+{%load static%}
+
+<h4>welcome user {{request.user}}</h4>
+
+<h1 class="text-center fw-bold">Task Application</h1>
+
+<div class="container d-flex justify-content-center py-5"  style="height: 100vh;">
+
+    <div class="col-5">
+
+        <h5 class="fw-bold fa-regular fa-clipboard py-2">Added Activites</h5>
+
+        {%for t in data%}
+
+        <h5><i class="fa-regular py-2 text-center"></i>->{{t.title}}</h5>
+
+        {%endfor%}
+    </div>
+
+    <div class="col-md-3">
+        <img src="{%static 'images/db.jpg'%}" class="img-fluid rounded-start " alt="...">
+
+        <a href="{%url 'task-add'%}" class="btn btn-outline-success mt-5 d-flex justify-content-center">ADD NEW TASK</a>
+    </div>
+
+    <div class="col-4">
+
+    </div>
+
+
+</div>
+
+
+
+
+
+{%endblock%}
